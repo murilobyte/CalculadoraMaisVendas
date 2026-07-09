@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mais Vendas</title>
+  <!-- Fonte da LP: Neue Haas Grotesk (Adobe Fonts / Typekit) -->
+  <link rel="stylesheet" href="https://use.typekit.net/gku0pni.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<style>
+  :root {
+    --chat--color-primary: #6c00ff;
+
+    --chat--toggle--background: #6c00ff;
+    --chat--toggle--hover--background: #6d28d9;
+    --chat--toggle--active--background: #5b21b6;
+
+    --chat--message--user--background: #7c3aed;
+    --chat--message--user--color: #eaeaea;
+
+    --chat--message--bot--background: #ffffff;
+    --chat--message--bot--color: #171717;
+
+    --chat--window--width: 380px;
+    --chat--window--height: 560px;
+    --chat--border-radius: 10px;
+    --chat--toggle--size: 64px;
+  }
+  .chat-input {
+    border-top: none !important;
+    background: #ea0c0c !important;
+  }
+
+  .chat-input-send-button,
+  .chat-input-send-button:hover,
+  .chat-input-send-button:active {
+    background: #6c00ff !important;
+    color: #ffffff !important;
+  }
+
+  .chat-input-send-button svg,
+  .chat-input-send-button svg path {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: #ffffff !important;
+  }
+</style>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://projeto01-n8n.aiv8ty.easypanel.host/webhook/0f348309-c050-4f22-bad9-72b5a9501fdd/chat',
+    mode: 'window',
+    showWelcomeScreen: false,
+    defaultLanguage: 'pt-BR',
+    initialMessages: [
+      'Olá! Sou o assistente do IndicadorMais. Como posso ajudar?'
+    ],
+    i18n: {
+      'pt-BR': {
+        title: 'Atendimento',
+        subtitle: 'IndicadorMais',
+        inputPlaceholder: 'Digite sua mensagem...',
+        getStarted: 'Iniciar conversa',
+        footer: ''
+      }
+    }
+  });
+</script>
+</head>
+<body>
+
+  <!-- ===================================================================
+       As seções serão inseridas aqui, uma por vez, na ordem dos prints.
+  ==================================================================== -->
+
+  <!-- INÍCIO: SEÇÕES -->
+
+  <!-- ================= SEÇÃO 1 — HERO ================= -->
+  <section class="hero" id="hero">
+    <!-- Brilho radial do fundo (cresce no load) -->
+    <div class="hero__glow" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <!-- Título: 2 frases que trocam com crossfade + blur no 1º scroll -->
+      <h1 class="hero__title">
+        <span class="hero__phrase hero__phrase--1">Você começou<br>com o certificado<br>digital.</span>
+        <span class="hero__phrase hero__phrase--2" aria-hidden="true">Agora te<br>trouxemos<br>até aqui</span>
+      </h1>
+
+      <!-- Descrição: aparece linha por linha -->
+      <p class="hero__desc">
+        <span class="hero__desc-line" style="--i: 0">O certificado foi o começo da confiança entre você e</span>
+        <span class="hero__desc-line" style="--i: 1">seus clientes. Mas todo cliente que precisa de certificado</span>
+        <span class="hero__desc-line" style="--i: 2">também precisa emitir nota, assinar contratos, controlar</span>
+        <span class="hero__desc-line" style="--i: 3">ponto e muito mais.</span>
+      </p>
+
+      <!-- Botão pílula com hover em cascata -->
+      <button class="hero__btn" type="button">
+        <span class="hero__btn-label">Conheça o Indicador+</span>
+      </button>
+    </div>
+  </section>
+  <!-- =============== FIM SEÇÃO 1 — HERO =============== -->
+
+  <!-- ========= SEÇÃO 2 — E PRA ISSO CRIAMOS O INDICADOR+ ========= -->
+  <section class="secao2" id="secao2">
+    <div class="secao2__inner">
+      <!-- Coluna esquerda: título -->
+      <h2 class="secao2__titulo">
+        <span class="secao2__linha" style="--i: 0"><span class="secao2__linha-in">E pra isso</span></span>
+        <span class="secao2__linha" style="--i: 1"><span class="secao2__linha-in">criamos o</span></span>
+        <span class="secao2__linha" style="--i: 2"><span class="secao2__linha-in"><span class="secao2__destaque">Indicador+</span></span></span>
+      </h2>
+
+      <!-- Coluna direita: descrição (rebaixada) -->
+      <p class="secao2__desc">
+        Muito além do certificado digital. O Indicador+ é a parceria da
+        Syngular que reúne, em um só lugar, todas as soluções que o seu
+        cliente precisa e transforma cada indicação realizada em renda
+        recorrente para você.
+      </p>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 2 ======= -->
+
+  <!-- ========= SEÇÃO 3 — COMO FUNCIONA (3 PASSOS) ========= -->
+  <section class="como" id="como-funciona">
+    <div class="como__inner">
+
+      <!-- Cabeçalho -->
+      <header class="como__head">
+        <p class="como__sobre reveal" data-delay="0">Como funciona</p>
+        <h2 class="como__titulo">
+          <span class="reveal" data-delay="90">Simples para você.</span>
+          <span class="reveal" data-delay="170">Completo para o cliente.</span>
+        </h2>
+      </header>
+
+      <!-- Passos -->
+      <div class="como__passos">
+
+        <!-- Passo 01 -->
+        <div class="como__passo">
+          <!-- PLACEHOLDER opcional: ícone do passo 01 -->
+          <div class="como__num reveal" data-delay="0">01</div>
+          <div class="como__texto">
+            <h3 class="como__passo-titulo reveal" data-delay="120">Você indica</h3>
+            <p class="como__passo-desc reveal" data-delay="200">
+              Identifique a necessidade do cliente e indique a solução certa
+              pelo Indicador+. Tudo em um único lugar, sem precisar buscar
+              fornecedor.
+            </p>
+          </div>
+        </div>
+
+        <!-- Passo 02 -->
+        <div class="como__passo">
+          <!-- PLACEHOLDER opcional: ícone do passo 02 -->
+          <div class="como__num reveal" data-delay="0">02</div>
+          <div class="como__texto">
+            <h3 class="como__passo-titulo reveal" data-delay="120">A Syngular resolve</h3>
+            <p class="como__passo-desc reveal" data-delay="200">
+              A execução, o comercial, o onboarding e o suporte ficam com a
+              Certifica. Você não precisa saber nada sobre o produto só indicar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Passo 03 -->
+        <div class="como__passo">
+          <!-- PLACEHOLDER opcional: ícone do passo 03 -->
+          <div class="como__num reveal" data-delay="0">03</div>
+          <div class="como__texto">
+            <h3 class="como__passo-titulo reveal" data-delay="120">Você recebe todo mês</h3>
+            <p class="como__passo-desc reveal" data-delay="200">
+              Comissão recorrente enquanto o cliente estiver ativo. Controle em
+              tempo real de cada indicação, fechamento e recebível.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 3 ======= -->
+
+  <!-- ========= SEÇÃO 4 — CALCULADORA (componente oficial) ========= -->
+  <!-- CALCULADORA -->
+  <section class="calc-section" id="calculator">
+    <div class="calc-wrapper" id="calcWrapper">
+      <div class="calc-stage">
+
+        <div class="panel-title">
+          <h1>Veja quanto sua <br>carteira rende mais <br>com nosso portfólio</h1>
+        </div>
+
+        <div class="panel-input">
+          <h2>Sua carteira</h2>
+          <p class="subtitle">Informe quantos clientes você atende para calcular o potencial</p>
+
+          <div class="input-label">Quantos clientes você atende hoje?</div>
+          <div class="input-wrap">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+            <input type="number" id="clientsInput" min="1" max="100000" placeholder="" inputmode="numeric">
+          </div>
+          <p class="input-help">Considere o total de empresas ativas na sua carteira contábil</p>
+
+          <div class="preset-grid">
+            <button class="preset-btn" data-value="50">50</button>
+            <button class="preset-btn" data-value="100">100</button>
+            <button class="preset-btn" data-value="250">250</button>
+            <button class="preset-btn" data-value="500">500</button>
+            <button class="preset-btn" data-value="1000">1000</button>
+            <button class="preset-btn" data-value="2000">2000</button>
+          </div>
+
+          <div class="cta-wrap">
+            <button class="cta-btn" id="calcBtn">Calcular</button>
+          </div>
+        </div>
+
+        <div class="panel-results" id="resultsPanel">
+          <h3 class="results-title">Com o Indicador+ sua <br>comissão aumenta em</h3>
+
+          <div class="results-hero">
+            <div class="label">Seu potencial de comissão anual</div>
+            <div class="value" id="annualValue"><span class="currency-prefix">R$</span>0,00</div>
+          </div>
+
+          <div class="results-row">
+            <div class="stat-card">
+              <div class="label">Média por mês</div>
+              <div class="value" id="monthlyValue"><span class="currency-prefix">R$</span>0,00</div>
+            </div>
+            <div class="stat-card">
+              <div class="label">MRR - Receita Recorrente mensal</div>
+              <div class="value" id="mrrValue"><span class="currency-prefix">R$</span>0,00</div>
+            </div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-card gray">
+              <div class="tag">Só certificado</div>
+              <div class="heading">O que você<br>já ganha</div>
+              <div class="big" id="certificateValue"><span class="currency-prefix">R$</span>0,00</div>
+              <div class="sub">Comissão por renovação</div>
+              <div class="foot">Ganho pontual, atrelado ao ciclo de renovação do certificado. Volta a zero quando o cliente renova.</div>
+            </div>
+            <div class="compare-card orange">
+              <div class="tag">Com indicador+</div>
+              <div class="heading">O que você passa a ganhar</div>
+              <div class="big" id="totalValue"><span class="currency-prefix">R$</span>0,00</div>
+              <div class="sub">Recorrente todo mês</div>
+              <div class="foot">Ganho recorrente, somando certificado + ERP, Signer, Registro e muito mais. Cresce a cada nova indicação ativa.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALHAMENTO POR PRODUTO -->
+  <section class="breakdown-section is-hidden" id="breakdownSection">
+    <div class="breakdown-card" id="breakdownCard">
+      <button class="breakdown-toggle" id="breakdownToggle" type="button" aria-expanded="false" aria-controls="breakdownBody">
+        <div class="breakdown-header-text">
+          <h3>Detalhamento por produto</h3>
+          <p>Vendas, comissão e ganho de cada um dos<br>nove produtos.</p>
+        </div>
+        <span class="breakdown-chevron" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </span>
+      </button>
+
+      <div class="breakdown-body" id="breakdownBody">
+        <div class="breakdown-body-inner">
+          <div class="breakdown-table-wrap">
+            <div class="breakdown-table" role="table" aria-label="Detalhamento por produto">
+              <div class="breakdown-row breakdown-head" role="row">
+                <div role="columnheader">Produto</div>
+                <div role="columnheader">Aderência</div>
+                <div role="columnheader">Vendas</div>
+                <div role="columnheader">Comissão / venda</div>
+                <div role="columnheader">Ganho anual</div>
+                <div role="columnheader">Recorrente?</div>
+              </div>
+              <div class="breakdown-rows" id="breakdownRows"></div>
+              <div class="breakdown-row breakdown-total" role="row">
+                <div role="cell" data-label="Produto"><strong>Total</strong></div>
+                <div role="cell" data-label="Aderência"></div>
+                <div role="cell" data-label="Vendas" id="breakdownTotalSales">1</div>
+                <div role="cell" data-label="Comissão / venda"></div>
+                <div role="cell" data-label="Ganho anual" id="breakdownTotalGain" class="breakdown-total-value">R$ 0,00</div>
+                <div role="cell" data-label="Recorrente?"></div>
+              </div>
+            </div>
+          </div>
+          <p class="breakdown-foot">
+            Premissas: % de aderência calibrada para uma carteira típica de contador parceiro · <strong>10% de comissão sobre o valor anual</strong> · MRR considera apenas produtos com cobrança recorrente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 4 ======= -->
+
+  <!-- ========= SEÇÃO 5 — PORTFÓLIO DE SOLUÇÕES (componente oficial) ========= -->
+  <!-- PORTFÓLIO -->
+  <section class="portfolio reveal">
+    <div class="container">
+      <p class="section-eyebrow">Portfólio de soluções</p>
+      <h2 class="section-title">TUDO QUE O SEU CLIENTE PRECISA.<br>VOCÊ JÁ PODE INDICAR HOJE.</h2>
+
+      <div class="portfolio-widget">
+        <div class="tabs" role="tablist" aria-label="Categorias de produtos Certifica">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-docs" id="tab-docs" data-tab="docs">Documentos e compliance</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-gestao" id="tab-gestao" data-tab="gestao">Gestão e fiscal</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-juridico" id="tab-juridico" data-tab="juridico">Jurídico e regulatório</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-marketing" id="tab-marketing" data-tab="marketing">Crescimento e marketing</button>
+        </div>
+
+        <div class="panels">
+          <section class="panel panel--docs active" id="panel-docs" role="tabpanel" aria-labelledby="tab-docs" data-panel="docs">
+            <article class="card card--signer" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica Signer -->
+              <h3>Certifica<br>Signer</h3>
+              <p>Assinatura eletrônica<br>com validade jurídica</p>
+            </article>
+            <article class="card card--ged" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica GED -->
+              <h3>Certifica<br>GED</h3>
+              <p>Gestão de documentos<br>e automação de fluxos</p>
+            </article>
+          </section>
+
+          <section class="panel panel--gestao" id="panel-gestao" role="tabpanel" aria-labelledby="tab-gestao" data-panel="gestao" hidden>
+            <article class="card card--erp" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica ERP -->
+              <h3>Certifica<br>ERP</h3>
+              <p>Emissão de NFs em quase 100% das prefeituras</p>
+            </article>
+            <article class="card card--concilia" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica Concilia -->
+              <h3>Certifica<br>Concilia</h3>
+              <p>Conciliação bancária<br>sem erros ou divergências</p>
+            </article>
+            <article class="card card--ponto" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica Ponto -->
+              <h3>Certifica<br>Ponto</h3>
+              <p>Controle inteligente da jornada de trabalho</p>
+            </article>
+            <article class="card card--nota" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica Nota -->
+              <h3>Certifica<br>Nota</h3>
+              <p>Emissão de NFs de forma integrada, segura e organizada.</p>
+            </article>
+          </section>
+
+          <section class="panel panel--juridico" id="panel-juridico" role="tabpanel" aria-labelledby="tab-juridico" data-panel="juridico" hidden>
+            <article class="card card--registro" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica Registro -->
+              <h3>Certifica<br>Registro</h3>
+              <p>Registro de marcas,<br>patentes e domínio</p>
+            </article>
+            <article class="card card--sst" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica SST -->
+              <h3>Certifica<br>SST</h3>
+              <p>Adequação às normas<br>de SST do eSocial</p>
+            </article>
+          </section>
+
+          <section class="panel panel--marketing" id="panel-marketing" role="tabpanel" aria-labelledby="tab-marketing" data-panel="marketing" hidden>
+            <article class="card card--up" tabindex="0">
+              <!-- PLACEHOLDER: ícone/logo do produto Certifica UP Digital -->
+              <h3>Certifica<br>UP Digital</h3>
+              <p>Marketing digital e comunicação comercial</p>
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 5 ======= -->
+
+  <!-- ========= SEÇÃO 6 — SIMULE SUA RENDA MENSAL (CTA) ========= -->
+  <section class="cta" id="simule">
+    <div class="cta__card">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <h2 class="cta__titulo reveal" data-delay="0">Simule sua<br>renda mensal</h2>
+      <p class="cta__sub reveal" data-delay="100">Ainda na dúvida? Faça as<br>contas você mesmo.</p>
+      <a class="cta__btn cascata-btn reveal" data-delay="200" href="#calculator"><span class="cascata__label">Calcular</span></a>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 6 ======= -->
+
+  <!-- ========= SEÇÃO 7 — PROVA SOCIAL (+ MÉTRICAS) ========= -->
+  <section class="prova" id="prova-social">
+    <div class="prova__card">
+      <!-- Aba preta no topo (canto superior direito) -->
+      <div class="prova__aba" aria-hidden="true"></div>
+
+      <div class="prova__conteudo">
+        <p class="prova__eyebrow reveal" data-delay="0">Prova social</p>
+        <h2 class="prova__titulo reveal" data-delay="80">MAIS DE 8 MIL CONTADORES<br>JÁ ESTÃO À SUA FRENTE.</h2>
+
+        <p class="prova__desc reveal" data-delay="180">
+          A rede Syngular já entregou mais de meio milhão de soluções para
+          empresas em todo o Brasil.
+        </p>
+        <p class="prova__desc reveal" data-delay="260">
+          Contadores que entraram cedo estão colhendo os frutos de uma posição
+          que a maioria ainda vai descobrir.
+        </p>
+
+        <div class="prova__metricas reveal" data-delay="360">
+          <div class="prova__metrica">
+            <div class="prova__num" data-target="8" data-prefix="+" data-suffix="mil">+8mil</div>
+            <p class="prova__rotulo">Contadores já<br>na rede Syngular</p>
+          </div>
+          <div class="prova__metrica">
+            <div class="prova__num" data-target="500" data-prefix="" data-suffix="k">500k</div>
+            <p class="prova__rotulo">Clientes atendidos<br>pela plataforma</p>
+          </div>
+          <div class="prova__metrica">
+            <div class="prova__num" data-target="90" data-prefix="" data-suffix="%">90%</div>
+            <p class="prova__rotulo">NPS USAT - satisfação<br>dos parceiros</p>
+          </div>
+          <div class="prova__metrica">
+            <div class="prova__num" data-target="9" data-prefix="+" data-suffix="">+9</div>
+            <p class="prova__rotulo">Soluções disponíveis<br>para indicar hoje</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 7 ======= -->
+
+  <!-- ========= SEÇÃO 8 — POR QUE O INDICADOR+ (3 CARDS) ========= -->
+  <section class="porque" id="por-que">
+    <div class="porque__inner">
+      <!-- Cabeçalho (à esquerda) -->
+      <header class="porque__head">
+        <p class="porque__eyebrow reveal" data-delay="0">Por que o Indicador+</p>
+        <h2 class="porque__titulo">
+          <span class="reveal" data-delay="90">Diferente de tudo que</span>
+          <span class="reveal" data-delay="170">já existiu no mercado</span>
+          <span class="reveal" data-delay="250">contábil.</span>
+        </h2>
+      </header>
+
+      <!-- Grid de 3 cards -->
+      <div class="porque__grid">
+        <article class="porque__card">
+          <!-- PLACEHOLDER: ícone do card 1 (opcional) -->
+          <h3 class="porque__card-titulo reveal" data-delay="0">Zero responsabilidade pelo serviço</h3>
+          <p class="porque__card-desc reveal" data-delay="80">
+            Uma indicação. Receita contínua. Você recebe todo mês enquanto o
+            cliente estiver ativo — sem precisar fazer nada de novo.
+          </p>
+        </article>
+
+        <article class="porque__card">
+          <!-- PLACEHOLDER: ícone do card 2 (opcional) -->
+          <h3 class="porque__card-titulo reveal" data-delay="120">Controle total em tempo real</h3>
+          <p class="porque__card-desc reveal" data-delay="200">
+            Você indica. A Syngular vende, entrega e suporta. Qualquer problema
+            com o produto é resolvido pela Syngular — não por você.
+          </p>
+        </article>
+
+        <article class="porque__card">
+          <!-- PLACEHOLDER: ícone do card 3 (opcional) -->
+          <h3 class="porque__card-titulo reveal" data-delay="240">Comissão recorrente, não pontual</h3>
+          <p class="porque__card-desc reveal" data-delay="320">
+            Acompanhe cada indicação, status de fechamento e recebíveis, tudo em
+            uma única visão. Você decide quando resgatar.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 8 ======= -->
+
+  <!-- ========= SEÇÃO 9 — PERGUNTAS FREQUENTES (FAQ) ========= -->
+  <section class="faq" id="faq">
+    <div class="faq__inner">
+      <header class="faq__head">
+        <h2 class="faq__titulo reveal" data-delay="0">Perguntas<br>frequentes</h2>
+      </header>
+
+      <div class="faq__card">
+        <div class="faq__item reveal" data-delay="0">
+          <button class="faq__pergunta" id="faq-q1" aria-expanded="false" aria-controls="faq-r1">
+            <span>Preciso pagar algo para entrar no Indicador+?</span>
+            <span class="faq__icone" aria-hidden="true"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.67151 16.657C8.26819 16.657 7.91528 16.319 7.91528 15.9328V0.724216C7.91528 0.337968 8.26819 0 8.67151 0C9.07484 0 9.42775 0.337968 9.42775 0.724216V15.9328C9.42775 16.319 9.07484 16.657 8.67151 16.657Z" fill="currentColor"/><path d="M16.587 9.12421H8.97425C8.57093 9.12421 8.21802 8.78625 8.21802 8.4C8.21802 8.01375 8.57093 7.67578 8.97425 7.67578H16.587C16.9903 7.67578 17.3432 8.01375 17.3432 8.4C17.3432 8.78625 16.9903 9.12421 16.587 9.12421Z" fill="currentColor"/><path d="M5.8986 9.12421H0.756231C0.352908 9.12421 0 8.78625 0 8.4C0 8.01375 0.352908 7.67578 0.756231 7.67578H5.8986C6.30192 7.67578 6.65483 8.01375 6.65483 8.4C6.65483 8.78625 6.30192 9.12421 5.8986 9.12421Z" fill="currentColor"/></svg></span>
+          </button>
+          <div class="faq__resposta" id="faq-r1" role="region" aria-labelledby="faq-q1">
+            <div class="faq__resposta-inner">
+              <!-- PLACEHOLDER: resposta da pergunta 1 (aguardando texto oficial) -->
+              <p class="faq__resposta-texto">Não. A adesão ao Indicador+ é totalmente gratuita. Você só precisa se cadastrar para começar a indicar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item reveal" data-delay="180">
+          <button class="faq__pergunta" id="faq-q2" aria-expanded="false" aria-controls="faq-r2">
+            <span>Preciso saber vender os produtos para indicar?</span>
+            <span class="faq__icone" aria-hidden="true"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.67151 16.657C8.26819 16.657 7.91528 16.319 7.91528 15.9328V0.724216C7.91528 0.337968 8.26819 0 8.67151 0C9.07484 0 9.42775 0.337968 9.42775 0.724216V15.9328C9.42775 16.319 9.07484 16.657 8.67151 16.657Z" fill="currentColor"/><path d="M16.587 9.12421H8.97425C8.57093 9.12421 8.21802 8.78625 8.21802 8.4C8.21802 8.01375 8.57093 7.67578 8.97425 7.67578H16.587C16.9903 7.67578 17.3432 8.01375 17.3432 8.4C17.3432 8.78625 16.9903 9.12421 16.587 9.12421Z" fill="currentColor"/><path d="M5.8986 9.12421H0.756231C0.352908 9.12421 0 8.78625 0 8.4C0 8.01375 0.352908 7.67578 0.756231 7.67578H5.8986C6.30192 7.67578 6.65483 8.01375 6.65483 8.4C6.65483 8.78625 6.30192 9.12421 5.8986 9.12421Z" fill="currentColor"/></svg></span>
+          </button>
+          <div class="faq__resposta" id="faq-r2" role="region" aria-labelledby="faq-q2">
+            <div class="faq__resposta-inner">
+              <!-- PLACEHOLDER: resposta da pergunta 2 (aguardando texto oficial) -->
+              <p class="faq__resposta-texto">Não. Você apenas indica. O time comercial da Certifica cuida de toda a abordagem, venda e fechamento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item reveal" data-delay="240">
+          <button class="faq__pergunta" id="faq-q3" aria-expanded="false" aria-controls="faq-r3">
+            <span>Se o produto indicado der problema, sou responsável?</span>
+            <span class="faq__icone" aria-hidden="true"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.67151 16.657C8.26819 16.657 7.91528 16.319 7.91528 15.9328V0.724216C7.91528 0.337968 8.26819 0 8.67151 0C9.07484 0 9.42775 0.337968 9.42775 0.724216V15.9328C9.42775 16.319 9.07484 16.657 8.67151 16.657Z" fill="currentColor"/><path d="M16.587 9.12421H8.97425C8.57093 9.12421 8.21802 8.78625 8.21802 8.4C8.21802 8.01375 8.57093 7.67578 8.97425 7.67578H16.587C16.9903 7.67578 17.3432 8.01375 17.3432 8.4C17.3432 8.78625 16.9903 9.12421 16.587 9.12421Z" fill="currentColor"/><path d="M5.8986 9.12421H0.756231C0.352908 9.12421 0 8.78625 0 8.4C0 8.01375 0.352908 7.67578 0.756231 7.67578H5.8986C6.30192 7.67578 6.65483 8.01375 6.65483 8.4C6.65483 8.78625 6.30192 9.12421 5.8986 9.12421Z" fill="currentColor"/></svg></span>
+          </button>
+          <div class="faq__resposta" id="faq-r3" role="region" aria-labelledby="faq-q3">
+            <div class="faq__resposta-inner">
+              <!-- PLACEHOLDER: resposta da pergunta 3 (aguardando texto oficial) -->
+              <p class="faq__resposta-texto">Não. A responsabilidade pelo produto e suporte é totalmente da Certifica. Você não precisa atender o cliente em nenhuma situação.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item reveal" data-delay="300">
+          <button class="faq__pergunta" id="faq-q4" aria-expanded="false" aria-controls="faq-r4">
+            <span>Como funciona o pagamento das comissões?</span>
+            <span class="faq__icone" aria-hidden="true"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.67151 16.657C8.26819 16.657 7.91528 16.319 7.91528 15.9328V0.724216C7.91528 0.337968 8.26819 0 8.67151 0C9.07484 0 9.42775 0.337968 9.42775 0.724216V15.9328C9.42775 16.319 9.07484 16.657 8.67151 16.657Z" fill="currentColor"/><path d="M16.587 9.12421H8.97425C8.57093 9.12421 8.21802 8.78625 8.21802 8.4C8.21802 8.01375 8.57093 7.67578 8.97425 7.67578H16.587C16.9903 7.67578 17.3432 8.01375 17.3432 8.4C17.3432 8.78625 16.9903 9.12421 16.587 9.12421Z" fill="currentColor"/><path d="M5.8986 9.12421H0.756231C0.352908 9.12421 0 8.78625 0 8.4C0 8.01375 0.352908 7.67578 0.756231 7.67578H5.8986C6.30192 7.67578 6.65483 8.01375 6.65483 8.4C6.65483 8.78625 6.30192 9.12421 5.8986 9.12421Z" fill="currentColor"/></svg></span>
+          </button>
+          <div class="faq__resposta" id="faq-r4" role="region" aria-labelledby="faq-q4">
+            <div class="faq__resposta-inner">
+              <!-- PLACEHOLDER: resposta da pergunta 4 (aguardando texto oficial) -->
+              <p class="faq__resposta-texto">As comissões são recorrentes enquanto o cliente estiver ativo. Você acompanha em tempo real e pode resgatar quando quiser.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item reveal" data-delay="360">
+          <button class="faq__pergunta" id="faq-q5" aria-expanded="false" aria-controls="faq-r5">
+            <span>Posso indicar apenas alguns produtos, não todos?</span>
+            <span class="faq__icone" aria-hidden="true"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.67151 16.657C8.26819 16.657 7.91528 16.319 7.91528 15.9328V0.724216C7.91528 0.337968 8.26819 0 8.67151 0C9.07484 0 9.42775 0.337968 9.42775 0.724216V15.9328C9.42775 16.319 9.07484 16.657 8.67151 16.657Z" fill="currentColor"/><path d="M16.587 9.12421H8.97425C8.57093 9.12421 8.21802 8.78625 8.21802 8.4C8.21802 8.01375 8.57093 7.67578 8.97425 7.67578H16.587C16.9903 7.67578 17.3432 8.01375 17.3432 8.4C17.3432 8.78625 16.9903 9.12421 16.587 9.12421Z" fill="currentColor"/><path d="M5.8986 9.12421H0.756231C0.352908 9.12421 0 8.78625 0 8.4C0 8.01375 0.352908 7.67578 0.756231 7.67578H5.8986C6.30192 7.67578 6.65483 8.01375 6.65483 8.4C6.65483 8.78625 6.30192 9.12421 5.8986 9.12421Z" fill="currentColor"/></svg></span>
+          </button>
+          <div class="faq__resposta" id="faq-r5" role="region" aria-labelledby="faq-q5">
+            <div class="faq__resposta-inner">
+              <!-- PLACEHOLDER: resposta da pergunta 5 (aguardando texto oficial) -->
+              <p class="faq__resposta-texto">Sim. Você indica apenas o que faz sentido para cada cliente. Não há nenhuma obrigação de indicar todos os produtos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="faq__rodape reveal" data-delay="0">
+        Ainda tem dúvida? <a href="#" class="faq__link-chat">Fale com a gente</a>
+      </p>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 9 ======= -->
+
+  <!-- ========= SEÇÃO 10 — CTA FINAL "PRONTO PARA COMEÇAR?" ========= -->
+  <section class="final" id="comecar">
+    <div class="final__card">
+      <p class="final__eyebrow reveal" data-delay="0">Pronto para começar?</p>
+
+      <h2 class="final__titulo reveal" data-delay="80">
+        <span class="final__t-claro">Sua carteira já vale muito mais </span><span class="final__t-escuro">do que você recebe por ela.</span>
+      </h2>
+
+      <p class="final__sub reveal" data-delay="180">
+        Sem custo de adesão. Sem virar vendedor. Só indicar e receber todo mês.
+      </p>
+
+      <div class="final__acoes reveal" data-delay="280">
+        <a class="final__btn final__btn--primario cascata-btn" href="#secao2"><span class="cascata__label">Quero lucrar mais</span></a>
+        <!-- PLACEHOLDER: link de contato/WhatsApp do gestor -->
+        <a class="final__btn final__btn--secundario" href="#">Ainda tenho dúvidas</a>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FIM SEÇÃO 10 ======= -->
+
+  <!-- ========= SEÇÃO 11 — RODAPÉ ========= -->
+  <footer class="rodape" id="rodape">
+    <div class="rodape__inner">
+      <div class="rodape__topo">
+        <!-- PLACEHOLDER: URL do Instagram -->
+
+        <!-- PLACEHOLDER: logo SVG syngular (substituir o texto abaixo) -->
+        <div class="rodape__logo reveal" data-delay="90" role="img" aria-label="Syngular"><svg xmlns="http://www.w3.org/2000/svg" width="220" height="50" viewBox="0 0 220 50" fill="none">
+  <path d="M102.881 10.542C104.805 10.542 106.448 10.8812 107.802 11.5596C109.155 12.238 110.244 13.3776 111.065 14.9844H111.173V11.3457H119.197V37.293C119.197 39.4315 118.868 41.2599 118.208 42.7773C117.547 44.2913 116.647 45.567 115.505 46.6025C114.255 47.6738 112.758 48.4551 111.009 48.9551C109.263 49.455 107.334 49.7051 105.23 49.7051L105.238 49.7021C101.314 49.7021 98.1566 48.9264 95.7676 47.373C93.3788 45.8232 91.9676 43.6377 91.5391 40.8203H99.7246C100.01 41.6773 100.571 42.3706 101.41 42.9062C102.249 43.4417 103.488 43.7099 105.127 43.71C107.123 43.7099 108.613 43.2272 109.595 42.2666C110.576 41.3025 111.065 39.9487 111.065 38.1992V37.6104C111.065 36.0786 111.119 34.8283 111.227 33.8643H111.013C109.334 36.6461 106.766 38.039 103.31 38.0391C101.667 38.0391 100.099 37.7464 98.6025 37.1572C97.1029 36.568 95.7852 35.6966 94.6426 34.5361C93.4999 33.3792 92.5925 31.9605 91.9141 30.2822C91.2358 28.6077 90.8965 26.6972 90.8965 24.5586C90.8965 22.42 91.1893 20.591 91.7783 18.8594C92.3675 17.1312 93.1964 15.6483 94.2676 14.4199C95.3388 13.1881 96.6034 12.2344 98.0674 11.5596C99.5278 10.8812 101.135 10.542 102.881 10.542ZM42.3184 30.8721C42.5696 29.6897 48.3105 11.3418 48.3105 11.3418H56.6553L46.4893 40.499C45.918 42.1379 45.3146 43.5207 44.6719 44.6455C44.0292 45.7702 43.2997 46.6767 42.4785 47.373C41.6573 48.0657 40.7327 48.5666 39.6973 48.8701C38.6617 49.1701 37.4683 49.3232 36.1113 49.3232H35.1475C34.7153 49.3232 32.3155 49.262 31.1406 49.2334V42.6494C32.0465 42.6672 33.5936 42.6913 33.6475 42.6914C36.1792 42.6914 37.5363 41.7275 37.7148 39.8027C37.7146 38.1172 36.7186 35.3636 36.2188 34.0781L27.3916 11.3418H36.2188L42.3184 30.8721ZM12.8379 10.5459C16.7979 10.5459 19.7943 11.3208 21.8262 12.874C23.858 14.4238 25.072 16.4493 25.4648 18.9453H17.6553C17.1196 16.9138 15.516 15.8956 12.8418 15.8955C11.5564 15.8955 10.5304 16.1457 9.7627 16.6455C8.99535 17.1453 8.61345 17.8597 8.61328 18.7842C8.61328 19.3196 8.79168 19.7555 9.14844 20.0947C9.50551 20.4339 10.0057 20.7096 10.6484 20.9238C11.2911 21.1381 12.0412 21.3162 12.8945 21.459C13.7515 21.6018 14.6589 21.7629 15.623 21.9414C16.905 22.1557 18.191 22.4303 19.4766 22.7695C20.762 23.1088 21.9186 23.6165 22.9541 24.2949C23.9896 24.9734 24.8365 25.8733 25.4971 26.998C26.1576 28.1228 26.4863 29.5768 26.4863 31.3584C26.4863 32.8936 26.165 34.2475 25.5225 35.4258C24.8797 36.604 23.9866 37.5826 22.8477 38.3682C21.7051 39.1537 20.3513 39.7426 18.7803 40.1318C17.2091 40.5246 15.4979 40.7207 13.6445 40.7207L13.6416 40.7139C11.574 40.7139 9.71625 40.4818 8.07715 40.0176C6.43468 39.5534 5.03483 38.8925 3.87793 38.0391C2.71752 37.1821 1.80998 36.1574 1.14941 34.9648C0.488919 33.7687 0.107145 32.4578 0 31.0332H7.91699C8.16694 32.3898 8.78109 33.4216 9.7627 34.1357C10.7446 34.8499 12.0555 35.207 13.6943 35.207C15.1904 35.207 16.3515 34.9219 17.1729 34.3506C17.994 33.7792 18.4053 32.9788 18.4053 31.9434C18.4051 31.3009 18.2081 30.7862 17.8154 30.3936C17.4227 30.0009 16.8866 29.6796 16.2119 29.4297C15.5335 29.1798 14.7585 28.9761 13.8838 28.8154C13.009 28.6548 12.073 28.4871 11.0732 28.3086C9.79151 28.0587 8.54203 27.7725 7.32812 27.4512C6.11398 27.1298 5.02765 26.648 4.06348 26.0088C3.0994 25.366 2.32452 24.5297 1.73535 23.4941C1.14638 22.4586 0.853516 21.1048 0.853516 19.4268C0.853632 17.9666 1.1643 16.681 1.78906 15.5742C2.41397 14.4674 3.26084 13.5418 4.33203 12.792C5.40314 12.0423 6.66714 11.4813 8.13086 11.1064C9.59135 10.7315 11.1632 10.5459 12.8379 10.5459ZM133.008 28.5684C133.008 30.1715 133.39 31.4037 134.157 32.2607C134.925 33.1178 136.057 33.5469 137.554 33.5469C139.264 33.5468 140.603 32.975 141.567 31.8359C142.531 30.6933 143.01 29.2325 143.01 27.4473V11.3418H151.302V39.8027H143.331V35.7354H143.171C142.135 37.4136 140.942 38.6421 139.585 39.4277C138.228 40.2132 136.571 40.6064 134.611 40.6064C131.365 40.6064 128.886 39.6527 127.176 37.7422C125.462 35.8353 124.608 33.3105 124.608 30.1719V11.3418H133.008V28.5684ZM183.893 10.542C185.71 10.542 187.281 10.6746 188.599 10.9424C189.916 11.2102 191.077 11.6459 192.077 12.2529C193.573 13.1099 194.673 14.2596 195.366 15.7021C196.062 17.1447 196.409 18.8306 196.409 20.7588V35.3643C196.409 37.5388 196.766 38.8599 197.48 39.3242V39.8066H189.295L189.288 39.8027C189.074 39.4814 188.878 39.0274 188.699 38.4385C188.521 37.8495 188.396 37.1461 188.324 36.3252H188.217C187.288 37.6462 186.174 38.6779 184.874 39.4277C183.571 40.1776 181.814 40.5527 179.604 40.5527C178.211 40.5527 176.918 40.3671 175.726 39.9922C174.529 39.6172 173.497 39.0746 172.622 38.3604C171.747 37.6463 171.069 36.7461 170.591 35.6572C170.109 34.5681 169.869 33.3284 169.869 31.9395C169.869 30.3722 170.162 29.0686 170.751 28.0332C171.34 26.9978 172.133 26.1613 173.133 25.5186C174.129 24.8759 175.308 24.3871 176.665 24.0479C178.022 23.7087 179.483 23.451 181.054 23.2725C183.585 22.9154 185.413 22.4871 186.538 21.9873C187.663 21.4874 188.224 20.7014 188.224 19.6338C188.224 18.5663 187.884 17.7694 187.206 17.1445C186.528 16.5199 185.456 16.209 183.996 16.209C182.393 16.209 181.189 16.5483 180.386 17.2266C179.582 17.9049 179.129 18.8126 179.021 19.9551H171.266C171.301 18.7448 171.587 17.5663 172.122 16.4238C172.658 15.2813 173.44 14.2736 174.476 13.4023C175.508 12.5276 176.812 11.8351 178.383 11.3174C179.95 10.7997 181.789 10.542 183.893 10.542ZM76.7764 10.5391C79.915 10.5392 82.3473 11.493 84.0791 13.4033C85.8072 15.3101 86.6747 17.8711 86.6748 21.0811V39.8076H78.3291V22.6875C78.329 21.1202 77.9292 19.8632 77.126 18.917C76.3225 17.9708 75.1368 17.4991 73.5693 17.499C72.002 17.499 70.6092 18.0883 69.6094 19.2627C68.6096 20.441 68.1095 21.9384 68.1094 23.7559V39.8076H59.71V11.3428H67.8408V15.6777H68.002C68.8947 13.9674 70.0803 12.6812 71.5586 11.8242C73.0369 10.9673 74.7767 10.5391 76.7764 10.5391ZM165.426 39.8027H156.973V0H165.426V39.8027ZM218.236 10.8564C219.093 10.8565 219.679 10.9276 220 11.0703V18.4023H219.786C219.179 18.2952 218.589 18.2412 218.021 18.2412C215.74 18.2055 213.911 18.8914 212.536 20.3018C211.161 21.7122 210.476 23.8054 210.476 26.5869V39.8027H202.077V11.3418H210.154V16.4238H210.315C211.244 14.4278 212.347 12.9986 213.633 12.1416C214.918 11.2847 216.451 10.8564 218.236 10.8564ZM188.435 25.8936C187.828 26.2863 187.089 26.597 186.214 26.8291C185.339 27.0612 184.439 27.2829 183.511 27.4971C181.658 27.8898 180.282 28.3721 179.39 28.9434C178.497 29.5147 178.054 30.4258 178.054 31.6719C178.054 32.918 178.465 33.793 179.286 34.293C180.107 34.7928 181.086 35.043 182.229 35.043C184.117 35.0429 185.624 34.525 186.749 33.4932C187.87 32.4576 188.435 31.1571 188.435 29.5859V25.8936ZM105.135 16.9053C103.282 16.9053 101.817 17.5733 100.749 18.9121C99.6778 20.2511 99.1456 22.0622 99.1455 24.3438C99.1455 26.6254 99.6815 28.3826 100.749 29.7217C101.82 31.0607 103.299 31.7284 105.188 31.7285L105.185 31.7256C106.256 31.7256 107.174 31.54 107.941 31.165C108.709 30.7901 109.348 30.2644 109.866 29.5859C110.384 28.9077 110.756 28.1257 110.991 27.2334C111.223 26.3408 111.337 25.3612 111.337 24.29C111.337 22.1871 110.819 20.4299 109.787 19.0195C108.752 17.6129 107.202 16.9054 105.135 16.9053Z" fill="white"/>
+</svg></div>
+
+        <!-- PLACEHOLDER: dados cadastrais oficiais — razão social, CNPJ,
+             endereço completo, cidade/UF, CEP. Colar os valores exatos aqui. -->
+        <address class="rodape__legal reveal" data-delay="170">
+          Syngular ® - Autoridade Certificadora <br>
+          CNPJ 18.530.917/0001-63 <br>
+          Rua Silviano Brandão, 177 B, Centro <br>
+          Formiga, MG - 35570 112 <br>
+        </address>
+      </div>
+
+      <p class="rodape__copy reveal" data-delay="0">
+        © 2026 Syngular · Todos os direitos reservados
+      </p>
+    </div>
+  </footer>
+  <!-- ======= FIM SEÇÃO 11 ======= -->
+
+  <!-- FIM: SEÇÕES -->
+
+  <!-- ===== MODAL — FORMULÁRIO DE CONTATO ===== -->
+  <div class="modal" id="modal-lead" aria-hidden="true">
+    <div class="modal__overlay" data-fechar-modal></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal__fechar" type="button" aria-label="Fechar" data-fechar-modal>&times;</button>
+
+      <h2 class="modal__titulo" id="modal-titulo">Quero lucrar mais</h2>
+      <p class="modal__subtitulo">
+        Preencha seus dados e fale agora com um gestor da Syngular no WhatsApp.
+      </p>
+
+      <form class="modal__form" id="form-lead" novalidate>
+        <div class="modal__campo">
+          <label for="lead-nome">Nome</label>
+          <input type="text" id="lead-nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+
+        <div class="modal__campo">
+          <label for="lead-email">E-mail</label>
+          <input type="email" id="lead-email" name="email" placeholder="voce@email.com" required>
+        </div>
+
+        <div class="modal__campo">
+          <label for="lead-telefone">Telefone</label>
+          <input type="tel" id="lead-telefone" name="telefone" placeholder="(00) 00000-0000" required>
+        </div>
+
+        <!-- Consentimento LGPD -->
+        <label class="modal__consentimento">
+          <input type="checkbox" id="lead-consentimento" required>
+          <span>
+            Autorizo o contato e o tratamento dos meus dados conforme a
+            <!-- PLACEHOLDER: link da política de privacidade -->
+            <a href="#" target="_blank" rel="noopener">Política de Privacidade</a>.
+          </span>
+        </label>
+
+        <button type="submit" class="modal__enviar">Quero lucrar mais</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Ponto de montagem do widget de chat (n8n) -->
+  <div id="n8n-chat"></div>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>
