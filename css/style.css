@@ -134,6 +134,8 @@ button {
   text-align: center;
   overflow: hidden;
   isolation: isolate;
+  /* padding-top maior desce o conteúdo um pouco (adapta à altura da tela) */
+  padding: clamp(4rem, 14vh, 11rem) 0 3rem;
 
   /* Gradiente do print — cores exatas informadas (#050505 -> #6C00FF ->
      #FFF), foco no topo-centro. Alongado para baixo: o violeta preenche
